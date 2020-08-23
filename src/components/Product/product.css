@@ -1,0 +1,21 @@
+.product{
+    display: flex;
+    padding: 10px;
+    border-bottom: 2px solid lightgray;
+}
+.product .others h5{
+    color: rgb(33, 103, 207);
+    font-weight: 400;
+}
+.product .others,
+.product .image{
+    margin: 5px;
+    padding: 5px;
+}
+.product .others .cart-btn{
+    background-color: goldenrod;
+    border-radius: 4px;
+    border: rgb(218, 168, 7);
+    padding: 4px 10px;
+    cursor: pointer;
+}
