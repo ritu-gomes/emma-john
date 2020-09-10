@@ -12,10 +12,10 @@
     margin: 5px;
     padding: 5px;
 }
-.product .others .cart-btn{
+.cart-btn{
     background-color: goldenrod;
     border-radius: 4px;
     border: rgb(218, 168, 7);
-    padding: 4px 10px;
+    padding: 4px 30px;
     cursor: pointer;
 }
