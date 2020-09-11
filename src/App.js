@@ -6,7 +6,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Review from './components/Review/Review';
 import Manage from './components/Manage/Manage';
@@ -24,9 +23,6 @@ function App() {
   const [loggedInUser,setLoggedInUser] = useState({});
   return (
     <userContext.Provider value={[loggedInUser,setLoggedInUser]}>
-      <h3>mail: {loggedInUser.email}</h3>
-      
-      
       <Router>
       <Header></Header>
         <Switch>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getDatabaseCart, removeFromDatabaseCart, processOrder } from '../../utilities/databaseManager';
+import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import fakeData from './../../fakeData/index';
 import ReviewItem from '../reviewItem/ReviewItem';
 import Cart from '../Cart/Cart';
