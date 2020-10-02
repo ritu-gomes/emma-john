@@ -2,12 +2,30 @@ import React from 'react';
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { userContext } from '../../App';
+import { getDatabaseCart, processOrder } from '../../utilities/databaseManager';
 import './shipment.css';
 
 const Shipment = () => {
     const { register, handleSubmit, watch, errors } = useForm();
     const [loggedInUser,setLoggedInUser] = useContext(userContext);
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+      const orderCart = getDatabaseCart();
+      const orderInfo = {...loggedInUser, products: orderCart, data: data};
+      fetch("http://localhost:5000/addOrders", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(orderInfo) 
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data){
+          processOrder();
+          alert('order has been placed')
+        }
+      })
+    }
 
     return (
         <form className="ship-form" onSubmit={handleSubmit(onSubmit)}>

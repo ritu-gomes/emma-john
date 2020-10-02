@@ -2,7 +2,7 @@ import React from 'react';
 import "../Product/product.css";
 
 const Cart = (props) => {
-    const total = props.cart.reduce((total,prd)=>total + prd.price * prd.count ,0);
+    const total = props.cart.reduce((total,prd)=>total + prd.price * prd.count || 1 ,0);
     debugger;
     let shipping =0;
     if(total > 35){
@@ -15,7 +15,7 @@ const Cart = (props) => {
         shipping = 12.99;
     }
     const tax = (total/10).toFixed(2);
-    const grandTotal = Math.round(total + shipping + Number(tax));
+    const grandTotal = Math.round(total + shipping + Number(tax)|| 1);
     return (
         <div>
             <h4>order summery</h4>
